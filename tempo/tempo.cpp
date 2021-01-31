@@ -64,6 +64,13 @@ int Tempo::Get_Seg(){
 	return seg;
 }
 
+void Tempo::Saida(){
+	cout << "Dias: " << dia << endl;
+	cout << "Horas: " << hora << endl;
+	cout << "Minutos: " << min << endl;
+	cout << "Segundos: " << seg << endl;
+}
+
 void Tempo::Incremento(){
 	seg = seg + 1;
 	consist();

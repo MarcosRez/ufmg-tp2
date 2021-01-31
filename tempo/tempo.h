@@ -26,6 +26,8 @@ class Tempo {
         int Get_Min();
         int Get_Seg();
 
+        void Saida();
+
         void Incremento();
         void Decremento();
 };

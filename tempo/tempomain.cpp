@@ -6,20 +6,20 @@ int main () {
     Tempo a = Tempo(3,56,15,9);
     Tempo b = Tempo(1,1,1,1);
     cout << "Apos a criacao do tempo: ";
-    a.printTempo();
-    b.printTempo();
+    a.Saida();
+    b.Saida();
 
-    a.incrTempo();
-    b.decrTempo();
+    a.Incremento();
+    b.Decremento();
     cout << "Apos acrescimo e decrescimo: ";
-    a.printTempo();
-    b.printTempo();
+    a.Saida();
+    b.Saida();
 
 
-    a.somaTempo(a, b);
+    a.Soma(a, b);
     cout << "Apos a soma: ";
-    a.printTempo();
-    b.printTempo();
+    a.Saida();
+    b.Saida();
 
     return 0;
 }
