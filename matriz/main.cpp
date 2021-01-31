@@ -1,4 +1,7 @@
 // main.cpp
+#include "matrix.h"
+#include <iostream>
+using namespace std;
 
 int main()
 {
@@ -10,7 +13,7 @@ int main()
     std::cout << "Numero de linhas de Y:: " << Y.getRows();
     std::cout << "Numero de colunas de Y:: " << Y.getCols();
 
-    std::cout << "Z é transposta de Y:: " << std::endl;
+    std::cout << "Z ï¿½ transposta de Y:: " << std::endl;
     Matrix Z = Y.transpose();
     Z.print();
     std::cout << "Numero de linhas de Z:: " << Z.getRows();

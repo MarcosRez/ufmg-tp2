@@ -1,5 +1,4 @@
 // matrix.h (header file)
-
 #include <iostream>
 
 class Matrix {
