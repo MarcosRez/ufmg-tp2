@@ -1,28 +1,29 @@
-#include <cstdlib>
+// matrix.h (header file)
+
 #include <iostream>
-#include <ctime>
-#include <string>
 
 class Matrix {
     private:
 
-        double** m; // Array 2D
-        int nRows;
-        int nCols; 
+        double** m; // m é um array 2D a ser implementado como um pointer de pointers
+        int nRows;  // numero de linhas
+        int nCols;  //  numero de colunas
 
     public:
 
-        // Construtor
-        Matrix();                           
-        Matrix(int rows, int cols);
-
-        // Destrutor
+        // Construtores
+        Matrix();
+        Matrix(int rows, int cols, double elem);
+        // destrutor
         ~Matrix();
-    
-        //Funções
+
+        // basic getters
         int getRows() const;
         int getCols() const;
-        void transpose();
-        void print() const;        
-        
+
+        // other methods
+        Matrix transpose();
+        void print() const;
+
+
 };
