@@ -3,7 +3,7 @@
 using namespace std;
 
 void Tempo::consist(){
-	
+
 	Convert_Seg();
 	if (n > 0) {
 		dia = n / 86400;
@@ -15,6 +15,7 @@ void Tempo::consist(){
 		seg = n;
 	}
 	else dia = hora = min = seg = 0;
+	Convert_Seg();
 
 }
 
@@ -33,10 +34,11 @@ void Tempo::Convert_Seg(){
 }
 
 void Tempo::Soma(Tempo T1, Tempo T2) {
-
-	Convert_Seg();
-	n = T1.n + T2.n;
-	consist();
+    dia = T1.dia + T2.dia;
+    hora = T1.hora + T2.hora;
+    min = T1.min + T2.min;
+    seg = T1.seg + T2.seg;
+    consist();
 
 }
 
