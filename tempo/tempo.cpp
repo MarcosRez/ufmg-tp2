@@ -1,8 +1,10 @@
 #include "tempo.h"
+#include <iostream>
 using namespace std;
 
 void Tempo::consist(){
 	
+	Convert_Seg();
 	if (n > 0) {
 		int dia = n / 86400;
 		n = n%86400;
@@ -22,14 +24,18 @@ Tempo::Tempo(int _dia, int _hora, int _min, int _seg){
 	hora = _hora;
 	min = _min;
 	seg = _seg;
-
 	consist();
+
+}
+
+void Tempo::Convert_Seg(){
+	n = seg + (min*60) + (hora*3600) + (dia*86400);
 }
 
 void Tempo::Soma(Tempo T1, Tempo T2) {
 
+	Convert_Seg();
 	n = T1.n + T2.n;
-
 	consist();
 
 }
@@ -65,7 +71,7 @@ int Tempo::Get_Seg(){
 }
 
 void Tempo::Saida(){
-	cout << "Dias: " << dia << endl;
+	cout << '\n' << "Dias: " << dia << endl;
 	cout << "Horas: " << hora << endl;
 	cout << "Minutos: " << min << endl;
 	cout << "Segundos: " << seg << endl;

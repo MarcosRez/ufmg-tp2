@@ -7,11 +7,12 @@ class Tempo {
         int hora;
         int min;
         int seg;
-        int n = seg + (min*60) + (hora*3600) + (dia*86400);
+        long int n;
 
     public:
         Tempo(int dia=0, int hora=0, int min=0, int seg=0);
-        ~Tempo();
+
+        void Convert_Seg();
 
         void consist();
         void Soma(Tempo T1, Tempo T2);

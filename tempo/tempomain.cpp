@@ -1,5 +1,6 @@
 //Função de teste
 #include "tempo.h"
+#include <iostream>
 using namespace std;
 
 int main () {
