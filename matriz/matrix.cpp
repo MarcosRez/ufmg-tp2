@@ -47,27 +47,21 @@ Matrix::~Matrix() {
 
 // obtem o numero de linhas
 int Matrix::getRows() const {
+    
     return nRows;
+
 }
 
 // obtem o numero de colunas
 int Matrix::getCols() const {
+
     return nCols;
+
 }
 
 // retorna uma matriz transposta
 Matrix Matrix::transpose() {
 
-    /*Aux = new double*[nCols];
-    for(int i=0; i<nCols; i++){
-        m[i] = new double[nRows];
-    }
-        
-    for(int i=0; i<rows; i++){
-        for(int j=0; j<cols; j++){
-            m[i][j] = elem;
-        }
-    }*/
     return Matrix(nCols, nRows, elemento);
 
 }
