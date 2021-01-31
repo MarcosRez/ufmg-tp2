@@ -1,6 +1,8 @@
 #include "matrix.h"
 using namespace std;
 
+//LINHA DE COMENTÁRIO
+
 // contrutor default - cria uma matriz sem nRows e nCols
 Matrix::Matrix(){
     nRows = 0;
