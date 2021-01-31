@@ -1,87 +1,74 @@
 #include "tempo.h"
 using namespace std;
 
-Tempo::Tempo(int ndia, int nhora, int nmin, int nseg) {
-	dia = ndia;
-	hora = nhora;
-	min = nmin;
-	seg = nseg;
-
-	if (hora > 23 || min > 59 || seg > 59) {
-		corrigeTempo();
+void Tempo::consist(){
+	
+	if (n > 0) {
+		int dia = n / 86400;
+		n = n%86400;
+		int hora = n / 3600;
+		n = n%3600;
+		int min = n / 60 ;
+		n = n%60;
+		int seg = n;
 	}
-}
-
-Tempo::~Tempo(){
+	else dia = hora = min = seg = 0;
 
 }
 
-void Tempo::corrigeTempo() {
-    int resto;
-	while (seg > 59) {
-		seg = seg - 60;
-		min++;
-	}
-	while (min > 59) {
-		min = min - 60;
-		hora++;
-	}
-	while (hora > 23) {
-		hora = hora - 24;
-		dia++;
-	}
-    if (seg < 0) {
-        seg = 59;
-        min--;
-    }
-    if (min < 0) {
-        min = 59;
-        hora--;
-    }
-    if (hora < 0 && dia >=0) {
-        hora = 23;
-        dia--;
-    } else if (dia < 0) {
-        cout << "Data inválida!" << endl;
-    }
-    //Atualiza os valores
+Tempo::Tempo(int _dia, int _hora, int _min, int _seg){
+
+	dia = _dia;
+	hora = _hora;
+	min = _min;
+	seg = _seg;
+
+	consist();
 }
 
-void Tempo::somaTempo(Tempo x, Tempo y) {
-	dia = x.dia + y.dia;
-	hora = x.hora + y.hora;
-	min = x.min + y.min;
-	seg = x.seg + y.seg;
-	corrigeTempo();
+void Tempo::Soma(Tempo T1, Tempo T2) {
+
+	n = T1.n + T2.n;
+
+	consist();
 
 }
 
-void Tempo::readTempo(){
-	cin >> dia;
-	cin >> hora;
-	cin >> min;
-	cin >> seg;
-	corrigeTempo();
-
+void Tempo::Set_Dia(int d){
+	dia = d;
+	consist();
+}
+void Tempo::Set_Hora(int h){
+	hora = h;
+	consist();
+}
+void Tempo::Set_Min(int m){
+	min = m;
+	consist();
+}
+void Tempo::Set_Seg(int s){
+	seg = s;
+	consist();
 }
 
-void Tempo::printTempo(){
-	cout << "Dias: " << dia << endl;
-	cout << "Horas: " << hora << endl;
-	cout << "Minutos: " << min << endl;
-	cout << "Segundos: " << seg << endl;
-
+int Tempo::Get_Dia(){
+	return dia;
+}
+int Tempo::Get_Hora(){
+	return hora;
+}
+int Tempo::Get_Min(){
+	return min;
+}
+int Tempo::Get_Seg(){
+	return seg;
 }
 
-void Tempo::incrTempo(){
-	seg++;
-	corrigeTempo();
+void Tempo::Incremento(){
+	seg = seg + 1;
+	consist();
 }
-
-void Tempo::decrTempo(){
-	seg--;
-	corrigeTempo();
+void Tempo::Decremento(){
+	seg = seg - 1;
+	consist();
 }
-
-
-
