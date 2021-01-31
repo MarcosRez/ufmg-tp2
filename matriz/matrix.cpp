@@ -1,8 +1,6 @@
 #include "matrix.h"
 using namespace std;
 
-//LINHA DE COMENTÁRIO
-
 // contrutor default - cria uma matriz sem nRows e nCols
 Matrix::Matrix(){
     nRows = 0;
@@ -22,6 +20,7 @@ Matrix::Matrix(int rows, int cols){
     for(int i=0; i<nRows; i++) {
         for(int j=0; j<nCols; j++) {
             this->m[i][j] = 0;
+
         }
     }
 
@@ -47,27 +46,30 @@ int Matrix::getCols() const {
 
 void Matrix::transpose() {
 
-    Matrix *Aux = new Matrix(nCols, nRows);
+    Matrix *Aux = new Matrix(nRows, nCols);
+     delete m;
 
-    for(int i = 0; i < Aux->getRows(); i++){
-        for(int j = 0; j < Aux->getCols(); j++){
+    m = Aux->m;
+    nRows = nCols;
+    nCols = Aux->nRows;
+
+
+    for(int i = 0; i < getRows(); i++){
+        for(int j = 0; j < getCols(); j++){
 
             Aux->m[i][j] = m[j][i];
         }
     }
 
-    delete m;
 
-    m = Aux->m;
-    nRows = nCols;
-    nCols = Aux->getRows();
+
 
 }
 
 void Matrix::print() const {
 
     for(int i = 0; i < nRows; i++) {
-        
+
         for(int j = 0; j < nCols; j++) {
             cout << m[i][j] << ' ';
         }
