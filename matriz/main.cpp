@@ -5,15 +5,15 @@ using namespace std;
 
 int main()
 {
-    Matrix Y(3,2);
-    Matrix X(4,1);
+    Matrix Y(3,2,0);
+    Matrix X(4,1,1);
 
     std::cout << "Y:: " << std::endl;
     Y.print();
     std::cout << "Numero de linhas de Y:: " << Y.getRows();
     std::cout << "Numero de colunas de Y:: " << Y.getCols();
 
-    std::cout << "Z � transposta de Y:: " << std::endl;
+    std::cout << "Z eh transposta de Y:: " << std::endl;
     Matrix Z = Y.transpose();
     Z.print();
     std::cout << "Numero de linhas de Z:: " << Z.getRows();

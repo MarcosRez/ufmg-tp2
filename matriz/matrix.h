@@ -5,8 +5,10 @@ class Matrix {
     private:
 
         double** m; // m é um array 2D a ser implementado como um pointer de pointers
+        double** Aux;
         int nRows;  // numero de linhas
         int nCols;  //  numero de colunas
+        double elemento;
 
     public:
 
