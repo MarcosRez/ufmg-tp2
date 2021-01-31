@@ -6,13 +6,13 @@ void Tempo::consist(){
 	
 	Convert_Seg();
 	if (n > 0) {
-		int dia = n / 86400;
+		dia = n / 86400;
 		n = n%86400;
-		int hora = n / 3600;
+		hora = n / 3600;
 		n = n%3600;
-		int min = n / 60 ;
+		min = n / 60 ;
 		n = n%60;
-		int seg = n;
+		seg = n;
 	}
 	else dia = hora = min = seg = 0;
 

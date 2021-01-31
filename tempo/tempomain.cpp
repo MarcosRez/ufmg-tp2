@@ -16,7 +16,6 @@ int main () {
     a.Saida();
     b.Saida();
 
-
     a.Soma(a, b);
     cout << "Apos a soma: ";
     a.Saida();
